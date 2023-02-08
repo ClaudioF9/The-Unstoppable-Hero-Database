@@ -1,7 +1,6 @@
-# Furry-Frenzy
+# The Unstoppable Hero Database
 
 ## User Story
-As a pet lover I want to:
-•	Input type of pet wanted (depending on search criteria)
-•	Show pet information (breed, age, type of pet, behaviour, name)
-•	Show information on shelters (image, location, potentially directions)
+As a lover of all things superhero related, I want to:
+•	Search for a super hero to see all the information related to that superhero (biography, powers, etc)
+•	At the same time I would also like the site to display any movies related to that superhero (provides plot and other information)
