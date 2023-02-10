@@ -1,92 +1,121 @@
-function saveHistory() {
-    // create array to store user search history
-    var searchHistory = [];
+var temp = JSON.parse(localStorage.getItem("Superhero")) || [];
 
-    // make first letter of user input upperCase for display
+$('#history-button').on('click', function(event) {
+    event.preventDefault();
+
+    alert('This was clicked!');
+    
+    // var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/";
+    // theSuperhero = $('img').attr('data-value');
+    // $('a').attr('href', queryURL + theSuperhero);
+    
+      
+})
+
+function getSearchHistory() {
+    
+    // get user input to form
     var userInput = $('.form-input').val().trim();
-    // var capInput = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+    
+    // convert user entry to start with uppercase and push to array
+    var capInput = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+    temp.push(capInput);
 
-    // make first letter of user input lowercase for data value/search
-    // var lowInput = userInput.charAt(0).toLowerCase() + userInput.slice(1);
+    // store in local storage
+    localStorage.setItem('Superhero', JSON.stringify(temp));
 
-    // pass the user input to the start of the array
-    searchHistory.push(userInput);
+    //query URL to get SH name and image and display search items on page
+    var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/";
 
-    var userInput = $('.form-input').val().trim();
-    var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/" + userInput;
-
-$.ajax({
-      url: queryURL,
-      method: "GET"
+    $.ajax({
+    url: queryURL + userInput,
+    method: "GET"
     }).then(function(response) {
-        var superheroName = response.results[0].name;
-        var superheroImage = response.results[0].image.url;
-    
+    var superheroName = response.results[0].name;
+    var superheroImage = response.results[0].image.url;
 
-        // create column divs to hold/display the search results
-        var div = $('<div>');
-        var h4 = $('<h4>');
-        var img = $('<img>');
-        var a = $('<a>');
+    var h4 = $('<h4>');
+    var img = $('<img>');
+    var a = $('<a>');
 
-        h4.text(superheroName);
-
-        img.addClass('col btn searched img-thumbnail');
-        img.attr('data-value', userInput);
-        img.attr('data-bs-toggle', 'modal');
-        img.attr('data-bs-target', '#superhero-modal');
-        theSuperhero = div.attr('data-value');
-        img.attr('src', superheroImage);
-
-        a.attr('href', queryURL + theSuperhero);
-
-        img.append(a);
-        h4.append(img);
-        div.append(h4);
+    h4.text(superheroName);
+    h4.addClass('col btn searched');
         
-        console.log('data-value is ' + theSuperhero);
-    
-        // loop through array to get the contents and display
-        for (i = 0; i < searchHistory.length; i++) {
-        if (!userInput) {
-            return;
-        } else {
-            $('search-history').text('Your recent search history')
-            $('#recent-search').append(div);
-        }
-        console.log(searchHistory);
-    }
-    });
+    img.addClass('btn history-button searched img-thumbnail');
+    img.attr('data-value', userInput);
+    img.attr('data-bs-toggle', 'modal');
+    img.attr('id', 'history-button');
+    img.attr('data-bs-target', '#superhero-modal');
+    theSuperhero = img.attr('data-value');
+    img.attr('src', superheroImage);
 
+    a.attr('href', queryURL + theSuperhero);
+
+    img.append(a);
+    h4.append(img);
+
+    $('#search-history').text('Your recent search history')
+    $('#recent-search').append(h4);
+
+
+    })
 
 }
 
 
-$('#search-button').on('click', function(event) {
+$('#search-form').on('submit', function(event) {
     event.preventDefault();
 
     var userInput = $('.form-input').val().trim();
     if (!userInput) {
-        alert('Please enter a superhero to search for.');
+        // alert('Please enter a superhero to search for.');
+        $('#alert-modal');
     }
 
-    saveHistory();
-    // buildQueryURL();
+    // call function
+    getSearchHistory();
 
+    //clear form input field after click/submit
     $('.form-input').val('');
 })
 
-// function buildQueryURL() {
-//     var userInput = $('.form-input').val().trim();
-//     var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/" + userInput;
 
-// $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     }).then(function(response) {
-//         var name = response.results[0].name;
-//         var image = response.results[0].image.url;
-//       console.log(name);
-//       console.log(image);
-//     });
-// }
+function displayHistory() {
+    for (i = 0; i < temp.length; i++) {
+        shName = temp[i];
+    var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/";
+
+$.ajax({
+      url: queryURL + shName,
+      method: "GET"
+    }).then(function(response) {
+        var nameLink = response.results[0].name;
+        var imgLink = response.results[0].image.url;
+
+    var h4 = $('<h4>');
+    var img = $('<img>');
+    var a = $('<a>');
+
+    h4.text(nameLink);
+    h4.addClass('col btn searched');
+        
+    img.addClass('btn searched img-thumbnail');
+    img.attr('data-value', shName);
+    img.attr('data-bs-toggle', 'modal');
+    img.attr('id', 'history-button');
+    img.attr('data-bs-target', '#superhero-modal');
+    theSuperhero = img.attr('data-value');
+    img.attr('src', imgLink);
+
+    a.attr('href', queryURL + theSuperhero);
+
+    img.append(a);
+    h4.append(img);
+
+    $('#search-history').text('Your recent search history')
+    $('#recent-search').append(h4);
+
+    });
+    }
+}
+displayHistory();
