@@ -1,9 +1,10 @@
 var temp = JSON.parse(localStorage.getItem("Superhero")) || [];
 
-$('#history-button').on('click', function(event) {
+$('.history-button').on('click', function(event) {
     event.preventDefault();
 
     alert('This was clicked!');
+    console.log('This was clicked!');
     
     // var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/";
     // theSuperhero = $('img').attr('data-value');
