@@ -1,0 +1,12 @@
+#history-button {
+    min-width: 140px;
+    max-width: 188px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h4.searched {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
