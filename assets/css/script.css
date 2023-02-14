@@ -1,6 +1,8 @@
 :root {
-    --mainColour: #fff;
+    --mainColour: #000000;
     --secondaryColour: #ff0000; 
+    --textColour: #fff;
+    --font-family:'Teko', sans-serif;
 }
 
 body{
@@ -8,10 +10,106 @@ body{
     background-size: cover;
 }
 
+.navbar {
+    background-color: var(--mainColour) !important;
+}
+
+.navbar-brand {
+    color: var(--textColour);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: var(--textColour);
+}
+
+.navbar-nav{
+    --bs-nav-link-color: var(--textColour);
+    --bs-nav-link-hover-color: var(--secondaryColour);
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 22px;
+
+}
+
+#hero{
+    background-color: var(--mainColour);
+    color: var(--textColour);
+    border-radius: 16px;
+}
+
+#about-superheroes {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 54px;
+}
+
+.hero-text {
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 28px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-top: 12px;
+    margin-bottom: -6px;
+}
+
+.form-input::-webkit-input-placeholder {
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 26px;
+}
+
+#search-button {
+    background-color: var(--mainColour);
+    color:var(--textColour);
+    border:none;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#search-button:hover{
+    color: var(--secondaryColour);
+}
+
+.superhero-name{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.find-movies{
+    background-color: var(--mainColour);
+    border: none;
+    font-family: var(--font-family);
+    font-size: 24px;
+}
+
+.find-movies:hover{
+    background-color: var(--mainColour);
+    color: var(--secondaryColour);
+}
+
+.superheroes-featured{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 44px;
+}
+
+.featured-superheroes{
+    background-color: var(--textColour);
+    border-radius: 24px;
+    padding: 16px;
+    margin-top: -6rem !IMPORTANT;
+}
 .featured-image{
     width: 90%;
     height: 90%;
-    border: solid black 5px;
+    border: solid var(--mainColour) 6px;
     border-radius: 20px;
     cursor: pointer;
 };
