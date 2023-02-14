@@ -2,4 +2,5 @@
     width: 90%;
     height: 90%;
     border: solid black 5px;
+    cursor: pointer;
 };
