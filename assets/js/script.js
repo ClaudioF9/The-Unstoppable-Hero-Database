@@ -48,18 +48,15 @@ function getImageName() {
 //     console.log("Error occurred!");
 //   });
 
-
-
-
 // Jquery version---------------------------------------------------------------------
 $.ajax({
   type: "GET",
   url: newUrl,
   dataType: "json",
   success: function(data) {
-    console.log(data);
-    console.log(data.name);
-    console.log(data.image.url);
+    // console.log(data);
+    // console.log(data.name);
+    // console.log(data.image.url);
 
     let featuredCardNew = $("<div>");
     featuredCardNew.addClass("col-3 featured");
@@ -72,7 +69,9 @@ $.ajax({
     heroImage.addClass("featured-image");
        heroImage.data("FName",data.name);
        heroImage.click(function(){
+        // $('#superhero-modal').modal('show')
     console.log(data.name);
+    console.log(typeof data.name);
     })
     featuredCardNew.append(heroName,heroImage);
   },
@@ -81,15 +80,15 @@ $.ajax({
     console.log("Error occurred!");
   }
 });
+}
 //---------------------------------------------------------------------------------------
 
-
-}
 
 for (let i = 0; i < 4; i++){
     getImageName()
 };
 
+//End of featured code--------------------------------------------------------------------
 
 
 
