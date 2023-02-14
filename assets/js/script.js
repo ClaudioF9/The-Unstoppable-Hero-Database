@@ -55,6 +55,8 @@ $('#search-button').on('click',function(){
       
         $(heroName).append('Full Name: ' + superHeroName);
 
+        $('.find-movies').attr('data-value', superHeroName)
+
         var superHeroAlias=response.results[0].biography.aliases;
         
         // console.log(superHeroAlias);
@@ -325,14 +327,12 @@ function searchMovies() {
         response.results.forEach((element, index, array) => {
             var movieTitle = element.title;
             var description = element.description;
-            // var actors = element.Actors;
-            // var released = element.Released;
             var poster = element.image;
         
-    console.log(movieTitle);
-    console.log(description);
-    console.log(poster);
-    console.log('inside ajax: ' + searchString);
+    // console.log(movieTitle);
+    // console.log(description);
+    // console.log(poster);
+    // console.log('inside ajax: ' + searchString);
 
     var h4 = ($('<h4>').addClass('movie-title'));
     var para = ($('<p>').addClass('movie-description'));
@@ -343,14 +343,13 @@ function searchMovies() {
     $('.movie-list').append(div);
 
     h4.text('Movie title: ' + movieTitle);
-    // para.text('Plot: ' + plot);
-    // para.text('Actors: ' + actors);
     para.text('Description: ' + description);
     photo.attr('src', poster);
 
     div.append(h4);
     div.append(para);
     div.append(photo)
+
 })
 
 })

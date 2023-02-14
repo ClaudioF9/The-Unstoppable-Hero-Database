@@ -46,3 +46,11 @@ img.btn {
     margin-bottom: 0px;
     margin-top: 40px;
 }
+
+body.modal-open {
+    overflow: scroll !important;
+  }
+
+  .modal{
+    overflow: scroll !important;
+ }
