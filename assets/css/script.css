@@ -1,3 +1,13 @@
+:root {
+    --mainColour: #fff;
+    --secondaryColour: #ff0000; 
+}
+
+body{
+    background-image: url('../images/Hero-Img.jpg');
+    background-size: cover;
+}
+
 .featured-image{
     width: 90%;
     height: 90%;
