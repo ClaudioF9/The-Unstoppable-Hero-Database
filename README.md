@@ -12,10 +12,10 @@ You will write your own user stories and acceptance criteria in GitHub Issues to
 
 ## User Story
 As a lover of all things superhero related, I want to:
-    * Search for a super hero to see all the information related to that superhero (names, aliases, etc)
-    * At the same time I would also like the site to display any movies related to that superhero (provides plot and other information)
-    * Have several superheroes randomly generated as featured heroes when refreshing the site
-    * Have a search history generated for my previously searched 
+*   Search for a super hero to see all the information related to that superhero (names, aliases, etc)
+*   At the same time I would also like the site to display any movies related to that superhero (provides plot and other information)
+*   Have several superheroes randomly generated as featured heroes when refreshing the site
+*   Have a search history generated for my previously searched 
 
 ## Installation
 
