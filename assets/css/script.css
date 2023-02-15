@@ -34,6 +34,16 @@ body{
 
 }
 
+.py-5 {
+    padding-top: 0rem!important;
+    padding-bottom: 0rem!important;
+}
+
+.my-5 {
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+}
+
 #hero{
     background-color: var(--mainColour);
     color: var(--textColour);
@@ -104,8 +114,15 @@ body{
     background-color: var(--textColour);
     border-radius: 24px;
     padding: 16px;
-    margin-top: -6rem !IMPORTANT;
 }
+
+#featured-cards{
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 32px;
+}
+
+
 .featured-image{
     width: 90%;
     height: 90%;
@@ -114,7 +131,11 @@ body{
     cursor: pointer;
 };
 
+
 img#history-button {
+=======
+ img#history-button {
+
     min-height: 152px;
     max-width: 140px;
     display: flex;
@@ -130,19 +151,30 @@ h4.searched {
     line-height: 3rem;
 } 
 
+=======
+
+#search-history{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 46px;
+}
+
+
 .col.searched {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
     margin: 5px;
+    font-family: var(--font-family);
+    font-size: 28px;
 }
 
 img.btn {
     padding: 0;
-    border-radius: 0;
-    border: 5px solid black;
-    max-width: 300px;
+    border-radius: 20px;
+    border: 6px solid black;
+    max-width: 200px;
 }
 
 .movie-poster {
