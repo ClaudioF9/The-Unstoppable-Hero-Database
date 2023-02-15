@@ -44,4 +44,14 @@ body{
 
 p.project-superhero {
     color: white !important;
+    font-size: 22px;
+}
+
+h1#about-project {
+    color: white !important;
+}
+
+.col.about-project-main {
+    background-color: black;
+    border-radius: 10px;
 }
