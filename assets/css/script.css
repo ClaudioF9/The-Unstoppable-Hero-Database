@@ -114,3 +114,67 @@ body{
     cursor: pointer;
 };
 
+/* img#history-button {
+    min-height: 152px;
+    max-width: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    border: 2px solid black;
+}
+
+h4.searched {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 3rem;
+} */
+
+.col.searched {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 5px;
+}
+
+img.btn {
+    padding: 0;
+    border-radius: 0;
+    border: 5px solid black;
+    max-width: 300px;
+}
+
+.movie-poster {
+    width: 30%;
+}
+
+.movie-list-head {
+    line-height: 5rem;
+}
+
+.movie-description {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.movie-title {
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+body.modal-open {
+    overflow: scroll !important;
+  }
+
+.modal{
+    overflow: scroll !important;
+ }
+
+ .modal-backdrop.show {
+    opacity: 0 !important;
+ }
+
+ .modal-backdrop {
+    position: inherit;
+ }
