@@ -131,18 +131,14 @@ body{
     cursor: pointer;
 };
 
-
-img#history-button {
-=======
  img#history-button {
-
     min-height: 152px;
     max-width: 140px;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     border: 2px solid black;
-} 
+}
 
 h4.searched {
     display: flex;
@@ -151,14 +147,11 @@ h4.searched {
     line-height: 3rem;
 } 
 
-=======
-
 #search-history{
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 46px;
 }
-
 
 .col.searched {
     display: flex;
@@ -179,28 +172,20 @@ img.btn {
 
 .movie-poster {
     width: 30%;
-    border-radius: 35px;
-    border: solid black 5px;
 }
 
 .movie-list-head {
     line-height: 5rem;
-    color: white;
-    font: bold;
 }
 
 .movie-description {
     font-size: 20px;
     font-weight: 300;
-    color: white;
-    font: bold;
 }
 
 .movie-title {
     margin-bottom: 0px;
     margin-top: 40px;
-    color: white;
-    font: bold;
 }
 
 body.modal-open {
