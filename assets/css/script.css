@@ -51,6 +51,14 @@ body.modal-open {
     overflow: scroll !important;
   }
 
-  .modal{
+.modal{
     overflow: scroll !important;
+ }
+
+ .modal-backdrop.show {
+    opacity: 0 !important;
+ }
+
+ .modal-backdrop {
+    position: inherit;
  }

@@ -1,26 +1,8 @@
 $(document).ready(function() {
 
-var temp = JSON.parse(localStorage.getItem("Superhero")) || [];
+// start of search history and movie list sections
 
-
-// $('#search-button').on('click', function(event) {
-//     event.preventDefault();
-
-//     var userInput = $('.form-input').val().trim();
-//     if (!userInput) {
-//         $('#alert-modal').modal('show');
-//         return;
-//     }
-
-//     $('#superhero-modal').modal('show')
-
-//     // call function
-//     getSearchHistory();
-
-//     //clear form input field after click/submit
-//     $('.form-input').val('');
-// })
-
+var temp = JSON.parse(localStorage.getItem("Superhero")) || []; // check the local storage on initial page load and get the contents and declare temp as an array
 
 $('#search-button').on('click',function(){
 
@@ -152,7 +134,7 @@ function getSearchHistory() {
 }
 
 
-
+// checks the api and displays the details of the SH on the search history cards
 function displayHistory() {
 
     // temp.forEach(theHeroName => {
@@ -196,69 +178,7 @@ $.ajax({
     });
     }
 }
-displayHistory();
-
-// $(document).on('click', '.history-button', function() {
-//     // console.log('this happened!');
-
-//     clearForm();
-
-//     $('#superhero-modal').modal('show')
-
-//     // $('.find-movies').attr('src', '#');
-    
-//     var queryURL = "https://superheroapi.com/api.php/10160292594515991/search/";
-//     theSuperhero = $('.history-button').attr('data-value');
-//     $('a').attr('href', queryURL + theSuperhero);
-
-//     $.ajax({
-//         url: queryURL + theSuperhero,
-//         method: "GET"
-//         }).then(function(response) {
-//         var theName = response.results[0].name;
-//         var image = response.results[0].image.url;
-//         var fullName = response.results[0].biography['full-name'];
-//         var alterEgos = response.results[0].biography['alter-egos'];
-//         var aliases = response.results[0].biography.aliases;
-//         var birthPlace = response.results[0].biography['place-of-birth'];
-//         var fAppearance = response.results[0].biography['first-appearance'];
-//         var affiliation = response.results[0].connections['group-affiliation'];
-//         var relatives = response.results[0].connections.relatives;
-
-//         console.log(theSuperhero);
-//         console.log(fullName, birthPlace, alterEgos, affiliation);
-
-//         $('.rounded-start').attr('src', image);
-//         // var h5 = $('superhero-name');
-//         // h5.attr('data-name', theSuperhero);
-
-//         ($('.superhero-name').attr('data-name', theSuperhero)).text(theName);
-
-//         var li = $('<li>');
-//         li.addClass('list-group-item');
-
-//         li.text('Full name: ' + fullName);
-//         li.text("Alter egos: " + alterEgos);
-//         li.text("Aliases: " + aliases);
-//         li.text("Place of birth: " + birthPlace);
-//         li.text("First appearance: " + fAppearance);
-//         li.text("Group affiliation: " + affiliation);
-//         li.text("Relatives: " + relatives);
-
-
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Full name: " + "</td><td>" + fullName + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Alter egos: " + "</td><td>" + alterEgos + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Place of birth: " + "</td><td>" + birthPlace + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "First appearance: " + "</td><td>" + fAppearance + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Group affiliation: " + "</td><td>" + affiliation + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Aliases: " + "</td><td>" + aliases + "</td></tr>");
-//         // $('.list-group').append("<tr><td class='row-title list-group-item' >" + "Relatives: " + "</td><td>" + relatives + "</td></tr>");
-
-//         $('.list-group').append(li);
-// })
-
-// });
-// });
+displayHistory(); // is placed out here so that the history cards are displayed on page load
 
 
 $(document).on('click', '.history-button', function() {
@@ -314,6 +234,7 @@ $(document).on('click', '.history-button', function() {
 
 })
 
+// for the search movies page, pulls the info from the associated api
 function searchMovies() {
 
     var searchString = $('.find-movies').data('value');
@@ -355,7 +276,7 @@ function searchMovies() {
 })
 }
 
-
+// trigger to hide the form and modals and show the movie list page
 $('.find-movies').on('click', function() {
 
     $('section.py-5.container.my-5').hide();
@@ -368,11 +289,13 @@ $('.find-movies').on('click', function() {
 
 })
 
+// this function should clear the included sections when the button is clicked before a new search is performed
 function clearForm() {
     $('.rounded-start').empty();
     $('.superhero-name').empty();
     $('.list-group-item').empty();
 }
 
+// end of search history and movie list sections
 
 });
