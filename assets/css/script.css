@@ -176,16 +176,26 @@ img.btn {
 
 .movie-list-head {
     line-height: 5rem;
+    color: var(--textColour);
+    font-family: var(--font-family);
+    font-size: 34px;
+    
 }
 
 .movie-description {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 300;
+    color: var(--textColour);
+    font-family: var(--font-family);
+
 }
 
 .movie-title {
     margin-bottom: 0px;
     margin-top: 40px;
+    color: var(--textColour);
+    font-family: var(--font-family);
+    font-size: 30px;
 }
 
 body.modal-open {
