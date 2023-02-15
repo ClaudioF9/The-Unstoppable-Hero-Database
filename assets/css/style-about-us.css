@@ -1,0 +1,57 @@
+/* :root {
+    --mainColour: #000000;
+    --secondaryColour: #ff0000; 
+    --textColour: #fff;
+    --font-family:'Teko', sans-serif;
+}
+ */
+
+ :root {
+    --mainColour: #000000;
+    --secondaryColour: #ff0000; 
+    --textColour: #fff;
+    --font-family:'Teko', sans-serif;
+}
+
+body{
+    background-image: url('../images/Hero-Img.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    background-color: var(--mainColour) !important;
+}
+
+.navbar-brand {
+    color: var(--textColour);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: var(--textColour);
+}
+
+.navbar-nav{
+    --bs-nav-link-color: var(--textColour);
+    --bs-nav-link-hover-color: var(--secondaryColour);
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 22px;
+
+}
+
+p.project-superhero {
+    color: white !important;
+    font-size: 22px;
+}
+
+h1#about-project {
+    color: white !important;
+}
+
+.col.about-project-main {
+    background-color: black;
+    border-radius: 10px;
+}
