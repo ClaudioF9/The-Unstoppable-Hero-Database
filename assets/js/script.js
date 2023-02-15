@@ -258,7 +258,7 @@ $(document).ready(function() {
       var h4 = ($('<h4>').addClass('movie-title'));
       var para = ($('<p>').addClass('movie-description'));
       var photo = ($('<img>').addClass('movie-poster'));
-      var div = $('<div>');
+      var div = $('<div>').addClass('col searched');
   
       $('.movie-list-head').text('Movie list for ' + searchString);
       $('.movie-list').append(div);
