@@ -332,6 +332,7 @@ $.ajax({
     let heroImage = $("<img>");
     heroImage.attr("src", heroImageUrl);
     heroImage.addClass("featured-image");
+    heroImage.attr('data-value', data.name);
        heroImage.data("FName",data.name);
        heroImage.click(function(){
 //---click API pull from Imran
@@ -361,6 +362,7 @@ $('#superhero-modal').modal('show');
       let superHeroImg=response.results[0].image.url;
       let heroImg=$(".heroImg").attr("src", superHeroImg);
       $(heroImg).append(superHeroImg);
+      $('.find-movies').attr('data-value', clickString);
     });
 //--
     // console.log(data.name);
