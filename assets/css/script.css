@@ -21,7 +21,11 @@ body{
     font-size: 28px;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+.navbar-brand:hover{
+    color: var(--textColour) !important;
+}
+
+.show>.nav-link {
     color: var(--textColour);
 }
 
@@ -163,6 +167,15 @@ h4.searched {
     font-size: 28px;
 }
 
+#movie-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--mainColour);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
 img.btn {
     padding: 0;
     border-radius: 20px;
@@ -171,23 +184,16 @@ img.btn {
 }
 
 .movie-poster {
-    width: 30%;
+    width: 35%;
 }
 
 .movie-list-head {
     line-height: 5rem;
     color: var(--textColour);
     font-family: var(--font-family);
-    font-size: 34px;
+    font-size: 50px;
+    text-align: center;
     
-}
-
-.movie-description {
-    font-size: 26px;
-    font-weight: 300;
-    color: var(--textColour);
-    font-family: var(--font-family);
-
 }
 
 .movie-title {
@@ -195,8 +201,18 @@ img.btn {
     margin-top: 40px;
     color: var(--textColour);
     font-family: var(--font-family);
-    font-size: 30px;
+    font-size: 38px;
 }
+
+.movie-description {
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--secondaryColour);
+    font-family: var(--font-family);
+
+}
+
+
 
 body.modal-open {
     overflow: scroll !important;
