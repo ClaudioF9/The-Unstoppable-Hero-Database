@@ -49,7 +49,7 @@ https://claudiof9.github.io/The-Unstoppable-Hero-Database/
 Credit must be give to all the people who created and allowed us to use their API's. 
 
 The API's used were:
-*   OMDB API (The Open Move Database)
+*   IMDB API 
 *   SuperHero API
 
 ## License
