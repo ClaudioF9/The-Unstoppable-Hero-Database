@@ -21,8 +21,16 @@ body{
     font-size: 28px;
 }
 
+.navbar-brand:hover{
+    color: var(--textColour);
+}
+
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
     color: var(--textColour);
+}
+
+.nav-link:hover{
+    color: var(--secondaryColour) !important;
 }
 
 .navbar-nav{
